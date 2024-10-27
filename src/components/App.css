@@ -1,0 +1,62 @@
+/* Twist glow animation for the circle */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@keyframes twistGlow {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(0, 162, 255, 0.6), 0 0 50px rgba(0, 162, 255, 0.8);
+  }
+  25% {
+    transform: rotate(90deg) scale(1.1);
+    opacity: 1;
+    box-shadow: 0 0 40px rgba(0, 162, 255, 0.8), 0 0 70px rgba(0, 162, 255, 1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1);
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(0, 162, 255, 0.6), 0 0 50px rgba(0, 162, 255, 0.8);
+  }
+  75% {
+    transform: rotate(270deg) scale(1.1);
+    opacity: 1;
+    box-shadow: 0 0 40px rgba(0, 162, 255, 0.8), 0 0 70px rgba(0, 162, 255, 1);
+  }
+}
+
+/* Container for circle and text */
+.circle-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  margin-top: 60px;
+  cursor: pointer;
+}
+
+/* Animated circle */
+.infinity-circle {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  animation: twistGlow 4s infinite ease-in-out;
+  background: radial-gradient(circle, rgba(0, 162, 255, 0.9), transparent 60%);
+  border: 4px solid rgba(0, 162, 255, 0.4);
+}
+
+/* Centered text inside the circle, remains static */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.circle-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6); /* Adjusted for better contrast */
+  font-weight: 400;
+  text-align: center;
+  pointer-events: none;
+  white-space: nowrap; /* Keeps the text on a single line */
+}
